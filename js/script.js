@@ -72,3 +72,18 @@ document.addEventListener('DOMContentLoaded', function() {
         el.style.animationDelay = Math.random() * 0.5 + 's';
     });
 });
+
+// Dark Mode Toggle - almusavvir - 3-Nov-2025
+
+const darkModeToggle = document.getElementById('darkmode-toggle');
+   if(localStorage.getItem('darkMode') === 'enabled'){ 
+         document.body.classList.add('dark-mode');
+    }
+darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    if(document.body.classList.contains('dark-mode')){
+        localStorage.setItem('darkMode', 'enabled');
+    } else {
+        localStorage.setItem('darkMode', 'disabled');
+    }
+});
